@@ -1,0 +1,19 @@
+Kita\Bundle\BushimeBundle\Entity\RapportDiet:
+    type: entity
+    table: null
+    repositoryClass: Kita\Bundle\BushimeBundle\Entity\RapportDietRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '255'
+        description:
+            type: text
+        date:
+            type: date
+    lifecycleCallbacks: {  }
