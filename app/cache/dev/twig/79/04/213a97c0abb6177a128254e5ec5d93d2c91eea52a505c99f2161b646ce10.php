@@ -40,12 +40,12 @@ class __TwigTemplate_7904213a97c0abb6177a128254e5ec5d93d2c91eea52a505c99f2161b64
     public function block_body($context, array $blocks = array())
     {
         // line 10
-        echo "        
-    ";
+        echo "    <div id=\"page-wrapper\">   
+        ";
         // line 11
         $this->displayBlock('kitabushime_body', $context, $blocks);
         // line 13
-        echo "    
+        echo "    </div>
 ";
     }
 
@@ -53,7 +53,7 @@ class __TwigTemplate_7904213a97c0abb6177a128254e5ec5d93d2c91eea52a505c99f2161b64
     public function block_kitabushime_body($context, array $blocks = array())
     {
         // line 12
-        echo "    ";
+        echo "        ";
     }
 
     public function getTemplateName()

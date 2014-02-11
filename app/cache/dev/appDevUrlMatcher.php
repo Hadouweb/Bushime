@@ -146,6 +146,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             if (0 === strpos($pathinfo, '/bushime/ajouter')) {
+                // kitabushime_aliments
+                if ($pathinfo === '/bushime/ajouter/aliments') {
+                    return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::alimentsAction',  '_route' => 'kitabushime_aliments',);
+                }
+
                 // kitabushime_ajouterdiet
                 if ($pathinfo === '/bushime/ajouter/diet') {
                     return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::ajouterDietAction',  '_route' => 'kitabushime_ajouterdiet',);

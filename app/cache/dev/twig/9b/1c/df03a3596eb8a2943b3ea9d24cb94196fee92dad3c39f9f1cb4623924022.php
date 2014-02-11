@@ -35,7 +35,7 @@ class __TwigTemplate_9b1cdf03a3596eb8a2943b3ea9d24cb94196fee92dad3c39f9f1cb46239
           ";
         // line 13
         echo "          ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'label', array("label" => "Titre de l'article"));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'label', array("label" => "Nom du produit"));
         echo "
 
           ";
@@ -56,7 +56,7 @@ class __TwigTemplate_9b1cdf03a3596eb8a2943b3ea9d24cb94196fee92dad3c39f9f1cb46239
         echo "        <div>
           ";
         // line 24
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description"), 'label', array("label" => "Contenu de l'article"));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description"), 'label', array("label" => "Description du produit"));
         echo "
           ";
         // line 25
@@ -96,6 +96,6 @@ class __TwigTemplate_9b1cdf03a3596eb8a2943b3ea9d24cb94196fee92dad3c39f9f1cb46239
 
     public function getDebugInfo()
     {
-        return array (  73 => 33,  67 => 26,  63 => 25,  59 => 24,  56 => 23,  49 => 19,  43 => 16,  37 => 13,  30 => 9,  25 => 6,  19 => 2,);
+        return array (  73 => 33,  67 => 26,  63 => 25,  59 => 24,  56 => 23,  43 => 16,  37 => 13,  30 => 9,  25 => 6,  19 => 2,  49 => 19,  47 => 11,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }

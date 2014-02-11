@@ -40,8 +40,6 @@ class __TwigTemplate_11690a3edcbefc6fa2c01d30666d7b97a1fe4acdcebbeb229e10d73afc2
     {
         // line 10
         echo "      
-    <div id=\"page-wrapper\">
-
         <div class=\"row\">
           <div class=\"col-lg-12\">
             <h1>Dashboard <small>Statistics Overview</small></h1>

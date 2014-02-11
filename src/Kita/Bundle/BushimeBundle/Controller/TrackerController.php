@@ -12,15 +12,35 @@ class TrackerController extends Controller
         return $this->render('KitaBushimeBundle:Tracker:index.html.twig');
     }
     
-    public function ajouterDietAction()
+    public function alimentsAction()
     {
-         
+        
         $rapportDiet = new RapportDiet();
         
+        $form = $this->ajouterAlimentAction($rapportDiet);
+        
+        return $this->render('KitaBushimeBundle:Tracker:aliments.html.twig', array(
+            'form' => $form->createView(),
+        ));
+        
+    }
+    
+    public function ajouterAlimentAction($rapportDiet)
+    {
+        
+        $rapportDiet->setDate( new \DateTime);
+        
         $form = $this->createFormBuilder($rapportDiet)
-                ->add('nom',            'text')
-                ->add('description',    'text')
-                ->add('date',           'date')
+                ->add('nom', 'text', array(
+                                'attr' => array(
+                                    'class' => 'form-control',
+                                ))
+                        )
+                ->add('description', 'textarea', array(
+                                'attr' => array(
+                                    'class' => 'form-control',
+                                ))
+                        )
                 ->getForm();
         
         $request = $this->get('request');
@@ -39,8 +59,9 @@ class TrackerController extends Controller
             
         }
         
-        return $this->render('KitaBushimeBundle:Tracker:ajouterDiet.html.twig', array(
-            'form' => $form->createView(),
-        ));
+        return $form;
+        
     }
+    
+   
 }
