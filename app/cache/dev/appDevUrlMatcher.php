@@ -145,20 +145,25 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::indexAction',  '_route' => 'kitabushime_accueil',);
             }
 
-            if (0 === strpos($pathinfo, '/bushime/ajouter')) {
+            if (0 === strpos($pathinfo, '/bushime/aliments')) {
                 // kitabushime_aliments
-                if ($pathinfo === '/bushime/ajouter/aliments') {
+                if ($pathinfo === '/bushime/aliments') {
                     return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::alimentsAction',  '_route' => 'kitabushime_aliments',);
                 }
 
-                // kitabushime_ajouterdiet
-                if ($pathinfo === '/bushime/ajouter/diet') {
-                    return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::ajouterDietAction',  '_route' => 'kitabushime_ajouterdiet',);
+                // kitabushime_ajouteraliments
+                if ($pathinfo === '/bushime/aliments/ajouter') {
+                    return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::ajouterAlimentAction',  '_route' => 'kitabushime_ajouteraliments',);
                 }
 
-                // kitabushime_ajoutersport
-                if ($pathinfo === '/bushime/ajouter/sport') {
-                    return array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::ajouterSportAction',  '_route' => 'kitabushime_ajoutersport',);
+                // kitabushime_modifieraliments
+                if (0 === strpos($pathinfo, '/bushime/aliments/modifier') && preg_match('#^/bushime/aliments/modifier/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'kitabushime_modifieraliments')), array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::modifierAlimentAction',));
+                }
+
+                // kitabushime_supprimeraliments
+                if (0 === strpos($pathinfo, '/bushime/aliments/supprimer') && preg_match('#^/bushime/aliments/supprimer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'kitabushime_supprimeraliments')), array (  '_controller' => 'Kita\\Bundle\\BushimeBundle\\Controller\\TrackerController::supprimerAlimentAction',));
                 }
 
             }

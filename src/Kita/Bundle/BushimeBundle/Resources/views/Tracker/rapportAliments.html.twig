@@ -1,35 +1,23 @@
-    <div class="well">
-        <form action="" method="post" {{ form_enctype(form) }}>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover tablesorter">
+        <thead>
+            <tr>
+                <th>Nom <i class="fa fa-sort"></i></th>
+                <th>Déscription <i class="fa fa-sort"></i></th>
+                <th>Date <i class="fa fa-sort"></i></th>
+            </tr>
+        </thead>
+            {% for aliment in data %}
+                <tr>
+                    <td>{{ aliment.nom }}</td>
+                    <td>{{ aliment.description }}</td>
+                    <td>{{ aliment.date|date('d-m-Y') }}</td>
+                    <td><a href="{{ path('kitabushime_modifieraliments', {'id': aliment.id}) }}"><i class="fa fa-edit"></i></a></td>
+                    <td><a href="{{ path('kitabushime_supprimeraliments', {'id': aliment.id}) }}"><i class="fa fa-trash-o"></i></a></td>
+                </tr> 
+            {% endfor %}          
+        </tbody>
+    </table>
+</div>
 
-        {# Les erreurs générales du formulaire. #}
-        {{ form_errors(form) }}
-
-        <div>
-          {# Génération du label. #}
-          {{ form_label(form.nom, "Nom du produit") }}
-
-          {# Affichage des erreurs pour ce champ précis. #}
-          {{ form_errors(form.nom) }}
-
-          {# Génération de l'input. #}
-          {{ form_widget(form.nom) }}
-        </div>
-
-        {# Idem pour un autre champ. #}
-        <div>
-          {{ form_label(form.description, "Description du produit") }}
-          {{ form_errors(form.description) }}
-          {{ form_widget(form.description) }}
-        </div>
-
-        {# Génération des champs pas encore écrits.
-           Dans cet exemple, ce serait « date », « auteur » et « publication »,
-           mais aussi le champ CSRF (géré automatiquement par Symfony !)
-           et tous les champs cachés (type « hidden »). #}
-        {{ form_rest(form) }}
-            
-        <br />
-        <input class="btn btn-primary" type="submit" value="Envoyer" />
-            
-        </form>
-    </div>
+ 

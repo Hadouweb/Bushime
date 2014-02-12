@@ -16,18 +16,20 @@ class TrackerController extends Controller
     {
         
         $rapportDiet = new RapportDiet();
-        
+ 
+         
         $form = $this->ajouterAlimentAction($rapportDiet);
-        
+        $data = $this->rapportAliment();
+            
         return $this->render('KitaBushimeBundle:Tracker:aliments.html.twig', array(
             'form' => $form->createView(),
+            'data' => $data,
         ));
         
     }
     
-    public function ajouterAlimentAction($rapportDiet)
+    public function ajouterAlimentAction(RapportDiet $rapportDiet)
     {
-        
         $rapportDiet->setDate( new \DateTime);
         
         $form = $this->createFormBuilder($rapportDiet)
@@ -61,6 +63,42 @@ class TrackerController extends Controller
         
         return $form;
         
+    }
+    
+    public function modifierAlimentAction(RapportDiet $rapportDiet)
+    {
+        
+        $form = $this->ajouterAlimentAction($rapportDiet);
+        $data = $this->rapportAliment();
+            
+        return $this->render('KitaBushimeBundle:Tracker:aliments.html.twig', array(
+            'form' => $form->createView(),
+            'data' => $data,
+        ));
+            
+    }
+    
+    public function supprimerAlimentAction(RapportDiet $rapportDiet)
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $rapportDiet = $em->getRepository('KitaBushimeBundle:rapportDiet')->find($rapportDiet->getId());
+        
+        $em->remove($rapportDiet);
+        $em->flush();
+            
+        return $this->redirect($this->generateUrl('kitabushime_aliments'));
+            
+    }
+    
+    public function rapportAliment()
+    {
+        
+        $em = $this->getDoctrine()->getManager();
+        $data = $em->getRepository('KitaBushimeBundle:RapportDiet')->findAll();
+        
+        return $data;
+          
     }
     
    

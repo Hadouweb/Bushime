@@ -16,67 +16,55 @@ class __TwigTemplate_f821f3588cdbed49be5ea56844602059afcdf64926a6ee1f4bb831e7a2c
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "    <div class=\"well\">
-        <form action=\"\" method=\"post\" ";
-        // line 2
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
-        echo ">
+        echo "<div class=\"table-responsive\">
+    <table class=\"table table-bordered table-hover tablesorter\">
+        <thead>
+            <tr>
+                <th>Nom <i class=\"fa fa-sort\"></i></th>
+                <th>Déscription <i class=\"fa fa-sort\"></i></th>
+                <th>Date <i class=\"fa fa-sort\"></i></th>
+            </tr>
+        </thead>
+            ";
+        // line 10
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "data"));
+        foreach ($context['_seq'] as $context["_key"] => $context["aliment"]) {
+            // line 11
+            echo "                <tr>
+                    <td>";
+            // line 12
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "aliment"), "nom"), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 13
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "aliment"), "description"), "html", null, true);
+            echo "</td>
+                    <td>";
+            // line 14
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getContext($context, "aliment"), "date"), "d-m-Y"), "html", null, true);
+            echo "</td>
+                    <td><a href=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("kitabushime_modifieraliments", array("id" => $this->getAttribute($this->getContext($context, "aliment"), "id"))), "html", null, true);
+            echo "\"><i class=\"fa fa-edit\"></i></a></td>
+                    <td><a href=\"";
+            // line 16
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("kitabushime_supprimeraliments", array("id" => $this->getAttribute($this->getContext($context, "aliment"), "id"))), "html", null, true);
+            echo "\"><i class=\"fa fa-trash-o\"></i></a></td>
+                </tr> 
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['aliment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 18
+        echo "          
+        </tbody>
+    </table>
+</div>
 
-        ";
-        // line 5
-        echo "        ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'errors');
-        echo "
-
-        <div>
-          ";
-        // line 9
-        echo "          ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'label', array("label" => "Nom du produit"));
-        echo "
-
-          ";
-        // line 12
-        echo "          ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'errors');
-        echo "
-
-          ";
-        // line 15
-        echo "          ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'widget');
-        echo "
-        </div>
-
-        ";
-        // line 19
-        echo "        <div>
-          ";
-        // line 20
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description"), 'label', array("label" => "Description du produit"));
-        echo "
-          ";
-        // line 21
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description"), 'errors');
-        echo "
-          ";
-        // line 22
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "description"), 'widget');
-        echo "
-        </div>
-
-        ";
-        // line 29
-        echo "        ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
-        echo "
-            
-        <br />
-        <input class=\"btn btn-primary\" type=\"submit\" value=\"Envoyer\" />
-            
-        </form>
-    </div>
-";
+ ";
     }
 
     public function getTemplateName()
@@ -91,6 +79,6 @@ class __TwigTemplate_f821f3588cdbed49be5ea56844602059afcdf64926a6ee1f4bb831e7a2c
 
     public function getDebugInfo()
     {
-        return array (  70 => 29,  64 => 22,  60 => 21,  56 => 20,  53 => 19,  46 => 15,  40 => 12,  34 => 9,  27 => 5,  22 => 2,  19 => 1,  68 => 28,  66 => 27,  54 => 17,  52 => 16,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  62 => 18,  53 => 16,  49 => 15,  45 => 14,  41 => 13,  37 => 12,  34 => 11,  30 => 10,  19 => 1,);
     }
 }
