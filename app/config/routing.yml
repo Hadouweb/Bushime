@@ -1,0 +1,5 @@
+kita_bushime:
+    resource: "@KitaBushimeBundle/Resources/config/routing.yml"
+    prefix:   /bushime
+
+

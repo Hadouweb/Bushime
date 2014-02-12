@@ -1,0 +1,19 @@
+{# src/Kita/BushimeBundle/Resources/views/Kita/ajouter.html.twig #}
+
+{% extends "KitaBushimeBundle::layout.html.twig" %}
+
+{% block title %}
+    Ajouter un article - {{ parent() }}
+{% endblock %}
+
+{% block kitabushime_body %}
+
+    <h2>Ajouter un article</h2>
+    
+    {% include "KitaBushimeBundle:Tracker:formulaire.html.twig" %}
+    
+    <p>
+        Attention: cet article sera ajouté directement sur la page d'accueil après validation du formulaire.
+    </p>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+Kita\Bundle\BushimeBundle\Entity\RapportSport:
+    type: entity
+    table: null
+    repositoryClass: Kita\Bundle\BushimeBundle\Entity\RapportSportRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '255'
+        description:
+            type: text
+        date:
+            type: date
+    lifecycleCallbacks: {  }

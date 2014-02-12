@@ -1,0 +1,21 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover tablesorter">
+        <thead>
+            <tr>
+                <th>Nom <i class="fa fa-sort"></i></th>
+                <th>Déscription <i class="fa fa-sort"></i></th>
+                <th>Date <i class="fa fa-sort"></i></th>
+            </tr>
+        </thead>
+            {% for aliment in data %}
+                <tr>
+                    <td><a href="">{{ aliment.nom }}</a></td>
+                    <td><a href="">{{ aliment.description }}</a></td>
+                    <td><a href="">{{ aliment.date|date('d-m-Y') }}</a></td>
+                </tr> 
+            {% endfor %}          
+        </tbody>
+    </table>
+</div>
+
+ 

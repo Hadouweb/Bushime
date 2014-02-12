@@ -1,0 +1,16 @@
+kitabushime_accueil:
+  path: /
+  defaults: { _controller: KitaBushimeBundle:Tracker:index }
+  
+kitabushime_aliments:
+  path: /ajouter/aliments
+  defaults: { _controller: KitaBushimeBundle:Tracker:aliments }
+  
+kitabushime_ajouterdiet:
+  path: /ajouter/diet
+  defaults: { _controller: KitaBushimeBundle:Tracker:ajouterDiet }
+
+kitabushime_ajoutersport:
+  path: /ajouter/sport
+  defaults: { _controller: KitaBushimeBundle:Tracker:ajouterSport }
+  
