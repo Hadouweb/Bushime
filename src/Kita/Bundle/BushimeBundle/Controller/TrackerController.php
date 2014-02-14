@@ -4,17 +4,20 @@ namespace Kita\Bundle\BushimeBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Kita\Bundle\BushimeBundle\Entity\RapportDiet;
+use Kita\Bundle\BushimeBundle\Utils\CsvImporter;
 
 class TrackerController extends Controller
 {
     public function indexAction()
     {
+        
         return $this->render('KitaBushimeBundle:Tracker:index.html.twig');
+        
     }
     
     public function alimentsAction()
     {
-        
+
         $rapportDiet = new RapportDiet();
  
          

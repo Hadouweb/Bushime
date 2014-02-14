@@ -1,0 +1,27 @@
+Kita\Bundle\BushimeBundle\Entity\Aliments:
+    type: entity
+    table: null
+    repositoryClass: Kita\Bundle\BushimeBundle\Entity\AlimentsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        calories:
+            type: string
+            length: 255
+        protides:
+            type: string
+            length: 255
+        glucides:
+            type: string
+            length: 255
+        lipides:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

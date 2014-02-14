@@ -58,13 +58,27 @@ class __TwigTemplate_30ecf13ea97668c7045c913eaf451223fbd48b0cfc45f262959e9a7a2bf
     <div class=\"col-lg-4\">
         <div class=\"panel panel-primary\">
             <div class=\"panel-heading\">
-                <h3 class=\"panel-title\">Aujourd'hui</h3>
+                <h3 class=\"panel-title\">Base de donnée</h3>
             </div>
             <div class=\"panel-body\">
                 ";
         // line 27
         $this->env->loadTemplate("KitaBushimeBundle:Tracker:rapportAliments.html.twig")->display($context);
         // line 28
+        echo "            </div>
+        </div>
+    </div>
+    
+    <div class=\"col-lg-4\">
+        <div class=\"panel panel-primary\">
+            <div class=\"panel-heading\">
+                <h3 class=\"panel-title\">Aujourd'hui</h3>
+            </div>
+            <div class=\"panel-body\">
+                ";
+        // line 38
+        $this->env->loadTemplate("KitaBushimeBundle:Tracker:rapportAliments.html.twig")->display($context);
+        // line 39
         echo "            </div>
         </div>
     </div>
@@ -85,6 +99,6 @@ class __TwigTemplate_30ecf13ea97668c7045c913eaf451223fbd48b0cfc45f262959e9a7a2bf
 
     public function getDebugInfo()
     {
-        return array (  68 => 28,  66 => 27,  54 => 17,  52 => 16,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
+        return array (  82 => 39,  80 => 38,  68 => 28,  66 => 27,  54 => 17,  52 => 16,  42 => 8,  39 => 7,  32 => 4,  29 => 3,);
     }
 }
